@@ -24,7 +24,6 @@
 
 @extends('layouts.dashboad')
 @section('content')
-    @include('layouts.nav')
     <div id="layoutSidenav">
         <div id="layoutSidenav_content">
             <main>
