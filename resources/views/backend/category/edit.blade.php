@@ -8,9 +8,9 @@
                         <h4>Categroy Name</h4>
                     </div>
                     <div class="card-body">
-                        {{-- @if (session('success'))
-                            <span class="text-success">{{ session('success') }}</span>
-                        @endif --}}
+                    @if (session('success'))
+                        <h6 class="text-white bg-dark p-3">{{ session('success') }}</h6>
+                    @endif
                         <form action="{{ route('category.update') }}" method="POST">
                             @csrf
                             <input type="hidden" name="category_id" value="{{ $edit_category->id }}">

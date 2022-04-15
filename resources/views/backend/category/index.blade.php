@@ -9,9 +9,9 @@
                         <h3>Categroy Name</h3>
                     </div>
                     <div class="card-body">
-                        {{-- @if (session('success'))
-                            <span class="text-success">{{ session('success') }}</span>
-                        @endif --}}
+                        @if (session('success'))
+                            <h6 class="text-white bg-dark p-3">{{ session('success') }}</h6>
+                        @endif
                         <form action="{{ route('category.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
@@ -34,6 +34,9 @@
                     <div class="card-header">
                         <h4>Category Table</h4>
                     </div>
+                    @if (session('delete'))
+                    <h6 class="text-white bg-dark p-3">{{ session('delete') }}</h6>
+                    @endif
                     <div class="card-body">
                         <table class="table" id="datatablesSimple">
                             <thead>

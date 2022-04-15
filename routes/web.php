@@ -36,5 +36,7 @@ Route::group(['prefix' => 'admin', 'middlewar' => 'auth'], function () {
     Route::get('/post', [PostController::class, 'index'])->name('post.index');
     Route::post('/post/store', [PostController::class, 'insert'])->name('post.store');
     Route::get('/post/view', [PostController::class, 'show'])->name('post.show');
-
+    Route::get('/post/edit/{id}', [PostController::class, 'editpost']);
+    Route::post('/post/update', [PostController::class, 'updatepost'])->name('post.update');
+    Route::get('/post/delete/{id}', [PostController::class, 'deletepost']);
 });

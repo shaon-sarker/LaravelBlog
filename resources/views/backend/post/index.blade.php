@@ -5,11 +5,11 @@
         <div class="col-md-8 m-auto" >
             <div class="card">
                 <div class="card-header">
-                    <h3>Categroy Name</h3>
+                    <h3>Post Name</h3>
                 </div>
                 <div class="card-body">
                     @if (session('success'))
-                        <span class="text-white bg-dark">{{ session('success') }}</span>
+                        <h6 class="text-white bg-dark p-2">{{ session('success') }}</h6>
                     @endif
                     <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -63,12 +63,4 @@
     </div>
 </div>
 @endsection
-{{-- @section('footer_script')
-<script>
-    tinymce.init({
-      selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
-      plugins: 'code table lists',
-      toolbar: 'undo redo | formatselect| bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
-    });
-  </script>
-@endsection --}}
+
