@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group p-2">
                             <label for="exampleInputEmail1">Category Name</label>
                                 <select name="category_id" class="form-control">
                                     <option value="">--Select Category--</option>
@@ -24,7 +24,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group p-2">
                             <label for="exampleInputEmail1">Post Heading</label>
                             <input type="text" class="form-control" name="post_heading"
                                 placeholder="Enter Post Name">
@@ -34,7 +34,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group p-2">
                             <label for="exampleInputEmail1">Post Image</label>
                             <input type="file" class="form-control" name="post_image">
                             @error('post_image')
@@ -45,11 +45,11 @@
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="featurepost" name="feature_post">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <label for="flexCheckDefault">
                               Feature Post
                             </label>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group p-2">
                             <label for="exampleInputEmail1">Post Description</label>
                             <textarea name="post_description" id="" class="form-control" cols="30" rows="10"></textarea>
                             @error('post_description')

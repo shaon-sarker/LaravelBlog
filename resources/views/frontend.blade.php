@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="text-center my-5">
                     <h1 class="fw-bolder">Welcome to Blog Website!</h1>
-                    <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+                    <p class="lead mb-0">A detailed overview of self-hosted, freemium, and free blogging sites and platforms where you can start your new blog. Reviews of the best online sites for </p>
                 </div>
             </div>
         </header>
