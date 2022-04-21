@@ -7,9 +7,6 @@
                 <div class="card-header">
                     <h3>Post Edit Name</h3>
                 </div>
-                    @if (session('update'))
-                    <h6 class="text-white bg-dark p-2">{{ session('update') }}</h6>
-                    @endif
                 <div class="card-body">
                     <form action="{{ route('post.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -33,7 +30,12 @@
                             <label for="exampleInputEmail1">Post Image</label>
                             <input type="file" class="form-control" name="post_image">
                             <img style="width: 120px" src="{{ asset('uploads/posts') }}/{{ $edit_post->post_image }}" alt="">
-
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="featurepost" name="feature_post">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Feature Post
+                            </label>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Post Description</label>

@@ -22,7 +22,7 @@ class CategoryController extends Controller
             'user_id' => Auth::id(),
             'created_at' => Carbon::now()
         ]);
-        return back()->with('success', 'Category Added Succesfully');
+        return back()->with('status', 'Category Added Succesfully');
     }
 
     public function editcategory($category_id)
@@ -37,13 +37,13 @@ class CategoryController extends Controller
             'category_name' => $request->category_name,
             'updated_at' => Carbon::now(),
         ]);
-        return back()->with('success', 'Category Updated Succesfully');
+        return back()->with('status', 'Category Updated Succesfully');
     }
 
     public function deletecategory($category_id)
     {
         Category::find($category_id)->delete();
-        return back()->with('delete', 'Category Delete');
+        return back()->with('status', 'Category Delete');
 
     }
 }

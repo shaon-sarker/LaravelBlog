@@ -5,13 +5,10 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-body">
                         <h3>Categroy Name</h3>
                     </div>
                     <div class="card-body">
-                        @if (session('success'))
-                            <h6 class="text-white bg-dark p-3">{{ session('success') }}</h6>
-                        @endif
                         <form action="{{ route('category.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
@@ -31,7 +28,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-body">
                         <h4>Category Table</h4>
                     </div>
                     @if (session('delete'))
@@ -55,9 +52,9 @@
                                         <td>{{ $data->category_name }}</td>
                                         <td>{{ $data->rtn_user->name }}</td>
                                         @if ($data->status == 1)
-                                            <td>{{ 'active' }}</td>
+                                            <td><span class="badge bg-dark">{{ 'active' }}</td>
                                         @else
-                                            <td>{{ 'inactive' }}</td>
+                                        <td><span class="badge bg-dark">{{ 'Inactive' }}</td>
                                         @endif
                                         <td>
                                             <button type="button" class="btn btn-info dropdown-toggle"
@@ -72,11 +69,6 @@
                                                         href="{{ url('admin/category/delete') }}/{{ $data->id }}">Delete</a>
                                                 </li>
                                             </ul>
-                                            {{-- <a href="{{ url('admin/category/edit') }}/{{ $data->id }}"
-                                                class="btn btn-sm btn-info">Edit</a> --}}
-                                        </td>
-                                        <td>
-
                                         </td>
                                     </tr>
                                 @empty
@@ -86,32 +78,7 @@
                         </table>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-@endsection
-@section('footer_script')
-    <script>
-        @if (Session::has('message'))
-            var type = "{{ Session::get('alert-type', 'info') }}"
-            switch(type){
-            case 'info':
-            toastr.info("{{ Session::get('message') }}");
-            break
-
-            case 'success':
-            toastr.success("{{ Session::get('message') }}");
-            break
-
-            case 'warning':
-            toastr.warning("{{ Session::get('message') }}");
-            break
-
-            case 'error':
-            toastr.error("{{ Session::get('message') }}");
-            break
-            }
-        @endif
-    </script>
 @endsection

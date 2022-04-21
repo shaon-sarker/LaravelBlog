@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['post_image','category_id','post_heading','post_description'];
+    protected $fillable = ['post_image','category_id','post_heading','post_description','feature_post'];
 
     function rtn_post(){
         return $this->belongsTo(Category::class,'category_id','id');

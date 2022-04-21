@@ -7,9 +7,6 @@
                 <div class="card-header">
                     <h4>Post Table</h4>
                 </div>
-                @if (session('delete'))
-                <h6 class="text-white bg-dark p-2">{{ session('delete') }}</h6>
-                @endif
                 <div class="card-body">
                     <table class="table" id="datatablesSimple">
                         <thead>
@@ -67,5 +64,4 @@
         </div>
     </div>
 </div>
-
 @endsection

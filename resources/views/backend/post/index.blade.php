@@ -8,9 +8,6 @@
                     <h3>Post Name</h3>
                 </div>
                 <div class="card-body">
-                    @if (session('success'))
-                        <h6 class="text-white bg-dark p-2">{{ session('success') }}</h6>
-                    @endif
                     <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -45,6 +42,12 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 </div>
                             @enderror
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="featurepost" name="feature_post">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Feature Post
+                            </label>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Post Description</label>

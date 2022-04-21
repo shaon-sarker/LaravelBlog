@@ -8,9 +8,6 @@
                         <h4>Categroy Name</h4>
                     </div>
                     <div class="card-body">
-                    @if (session('success'))
-                        <h6 class="text-white bg-dark p-3">{{ session('success') }}</h6>
-                    @endif
                         <form action="{{ route('category.update') }}" method="POST">
                             @csrf
                             <input type="hidden" name="category_id" value="{{ $edit_category->id }}">
@@ -18,11 +15,6 @@
                                 <label for="exampleInputEmail1">Category Name</label>
                                 <input type="text" class="form-control" name="category_name"
                                     placeholder="Enter Category Name" value="{{ $edit_category->category_name }}">
-                                {{-- @error('category_name')
-                                    <div class="alert alert-danger">
-                                        {{ $message }}
-                                    </div>
-                                @enderror --}}
                             </div>
                             <button type="submit" class="btn btn-primary mt-2">Add Catgeory</button>
                         </form>

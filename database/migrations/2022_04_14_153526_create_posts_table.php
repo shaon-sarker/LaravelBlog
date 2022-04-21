@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('post_heading');
             $table->string('post_image')->default('default.jpg');
             $table->string('post_description');
+            $table->string('feature_post')->nullable();
             $table->timestamps();
         });
     }

@@ -23,6 +23,7 @@ class PostController extends Controller
             'user_id'=>Auth::id(),
             'post_heading'=>$request->post_heading,
             'post_description'=>$request->post_description,
+            'feature_post'=>$request->feature_post,
             'created_at'=>Carbon::now(),
         ]);
 
@@ -35,7 +36,7 @@ class PostController extends Controller
             'post_image'=>$new_post_name,
         ]);
 
-        return back()->with('success', 'Post Added Succesfully');
+        return back()->with('status', 'Post Added Succesfully');
     }
 
     public function show(){
@@ -73,12 +74,12 @@ class PostController extends Controller
                 'user_id'=>Auth::id(),
                 'post_heading'=>$request->post_heading,
                 'post_description'=>$request->post_description,
+                'feature_post'=>$request->feature_post,
                 'updated_at'=>Carbon::now(),
-
             ]);
 
         }
-        return back()->with('update', 'Post Update Succesfully');
+        return back()->with('status', 'Post Update Succesfully');
     }
 
     public function deletepost($id){
@@ -88,6 +89,6 @@ class PostController extends Controller
         unlink($delete_path);
         Post::find($id)->delete();
 
-        return back()->with('delete','Post Deleted Succesfully');
+        return back()->with('status','Post Deleted Succesfully');
     }
 }
